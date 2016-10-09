@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :prototypes, except: :delete do
     resources :likes, only: [:create, :destroy]
   end
-  # resources :comments, only: :create
-  resources :users,      only: [:edit, :update, :show]
+  resources :users, only: [:edit, :update, :show]
+
+  scope module: :prototypes do
+    resources :popular, only: :index
+  end
 end
