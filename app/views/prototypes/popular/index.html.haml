@@ -6,15 +6,14 @@
   .container
     .row
       %ul.nav.nav-pills.col-lg-11
-        %li.active{role: "presentation"}
-          = link_to "Newest PROTO", root_path
         %li{role: "presentation"}
+          = link_to "Newest PROTO", root_path
+        %li.active{role: "presentation"}
           = link_to "Popular PROTO", popular_index_path
       %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
-.container.proto-list.clearfix
+.container.proto-list
   .row
     - @prototypes.each do |proto|
       = render partial: 'layouts/prototype', locals: { proto: proto }
 .text-center
-  = paginate @prototypes
-
+  = paginate @prototypes, window: 10, outer_window: -1
