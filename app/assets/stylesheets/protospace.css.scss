@@ -638,3 +638,25 @@ button.btn.btn-default {
   margin-left: 10px;
 }
 
+//インデックス画面のビュー
+
+.container.proto-list {
+  overflow: auto;
+  min-height: 500px;
+
+  .row{
+    overflow: auto;
+    min-height: 500px;
+    .proto-content{
+      overflow: auto;
+      min-height: 500px;
+    }
+  }
+}
+
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
